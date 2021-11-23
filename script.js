@@ -1,8 +1,12 @@
 (function() {
 
-    console.log('testing, testing, 123...')
+let expenseList = [];
+let weeklyIncome = 0;
+let totalExpenses = 0;
+let remainingBalance = 0;
 
-    // write code here
+let employmentIncome = document.getElementById('employmentIncomeInput');
+let passiveIncome = document.getElementById('passiveIncomeInput');
 
 
 

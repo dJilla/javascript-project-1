@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='styles.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Buddgy</title>
 </head>
 <body>
@@ -16,15 +16,44 @@
             Your Budget
         </h1>
     </header>
+    <section id='bigBoy'>
+        <div>
+            <h1 id='totalSummary' class='subHeader'>Total Summary</h1>
+        </div>
 
-    <div id='totalSummary'>
-        <h1>Total Summary</h1>
-    </div>
+        <div>
+            <h1 id='income' class='subHeader'>Income</h1>
+            <h2 class='type'>
+                <form>
+                    <label for='employmentIncome'>Employment:</label>
+                    <input type='number' id='employmentIncomeInput' name='employmentIncome' placeholder='Enter income here...'
+                </form>
+            </h2>
+            
+            <h2 class='type'>
+                <form>
+                    <label for='passiveIncome'>Passive:</label>
+                    <input type='number' id='passiveIncomeInput' name ='passiveIncome' placeholder='Enter income here...'
+                </form>
+            </h2>
+        </div>
 
-    <div id='income'>
-        <h1>Income</h1>
-    </div>
-
+        <div>
+            <h1 id='expenses' class='subHeader'>Expenses</h1>
+                <h2 class='type'>Bills</h2>
+                <h2 class='type'>Food</h2>
+                    <!-- <h3 class='subType'>Groceries</h3>
+                    <h3 class='subType'>Dine-out</h3>
+                    <h3 class='subType'>Delivery</h3> -->
+                <h2 class='type'>Clothing</h2>
+                    <!-- <h3 class='subType'>Formal</h3>
+                    <h3 class='subType'>Casual</h3>
+                    <h3 class='subType'>Travel</h3>
+                    <h3 class='subType'>Outdoors</h3> -->
+                <h2 class='type'>Entertainment</h2>
+                <h2 class='type'>Miscellaneous</h2>
+        </div>
+    </section>
 
     <script src='script.js'></script>
 </body>

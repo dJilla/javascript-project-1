@@ -1,24 +1,54 @@
 body {
-    margin: 0;
+    margin: auto;
     height: 100vh;
-    font-family: 'Mukta', sans-serif;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     background-color: green;
-    margin: 0;
+    top: 0;
 }
 
-header h1 {
 
+
+h2 form {
+    display: flex;
+    flex-direction: column;
 }
+
+h2 form input {
+    max-width: 25%;
+}
+
+
+#bigBoy {
+    margin-left: 10px;
+}
+
+.subHeader {
+    font-size: 1.25em;
+}
+
+.type {
+    font-size: 1em;
+}
+
+/* .subType {
+    font-size: .75em;;
+} */
 
 #totalSummary {
-    font-size: .75em;
+
 }
 
 #income {
-    font-size: .75em;
+
+}
+
+#expenses {
+
 }

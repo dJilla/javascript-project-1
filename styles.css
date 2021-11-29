@@ -2,6 +2,7 @@ body {
     margin: auto;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
+    /* display: flex; */
 }
 
 header {
@@ -13,42 +14,35 @@ header {
     top: 0;
 }
 
-
-
-h2 form {
-    display: flex;
-    flex-direction: column;
+div {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-h2 form input {
+#incomeForm {
+    display: flex;
+    flex-direction: column;
     max-width: 25%;
 }
 
+#incomeForm label {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: green;
+}
+
+#expenseForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+}
+
+#expenseForm label {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: red;
+}
 
 #bigBoy {
     margin-left: 10px;
-}
-
-.subHeader {
-    font-size: 1.25em;
-}
-
-.type {
-    font-size: 1em;
-}
-
-/* .subType {
-    font-size: .75em;;
-} */
-
-#totalSummary {
-
-}
-
-#income {
-
-}
-
-#expenses {
-
 }

@@ -2,7 +2,7 @@ body {
     margin: auto;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    /* display: flex; */
+    display: flex;  
 }
 
 header {
@@ -10,8 +10,10 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 7.5%;
     background-color: green;
     top: 0;
+    padding-left: 15px;
 }
 
 div {
@@ -22,6 +24,13 @@ div {
 #incomeForm {
     display: flex;
     flex-direction: column;
+}
+
+#incomeForm input {
+    max-width: 25%;
+}
+
+#incomeForm button {
     max-width: 25%;
 }
 
@@ -43,6 +52,12 @@ div {
     color: red;
 }
 
-#bigBoy {
+/* #bigBoy {
     margin-left: 10px;
-}
+} */
+
+@media only screen and (min-width: 768px) {
+    body {
+      
+    }
+  }

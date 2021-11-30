@@ -10,11 +10,11 @@
 
         let data = google.visualization.arrayToDataTable([
           ['Expense', '$'],
-          ['Bills',     1],
-          ['Food',      7],
-          ['Clothing',  6],
-          ['Entertainment', 5],
-          ['Misc.',    3]
+          ['Bills',     20],
+          ['Food',      25],
+          ['Clothing',  5],
+          ['Entertainment', 10],
+          ['Misc.',    5]
         ]);
 
         let options = {
@@ -48,18 +48,18 @@
             <div id="piechart" style="width: 675px; height: 375px;"></div>
         </div>
 
-         <div>
+         <div id='incomeSection'>
             <form id='incomeForm'>
-                <label for='weeklyIncome'>Weekly Income</label>
-                <input type='text' id='weeklyIncome' name='weeklyIncome' placeholder='Enter amount'>
-                <button>Add Income</button>
+                <label id='weeklyIncomeDisplay' for='weeklyIncomeInput'>Weekly Income: $0</label>
+                <input type='number' id='weeklyIncomeInput' name='weeklyIncomeInput' placeholder='Enter amount'>
+                <button id='updateIncomeButton'>Update Income</button>
             </form>
         </div>
 
-        <div>
+        <div id='expenseSection'>
             <form id='expenseForm'>
-                <label for='weeklyExpense'>Weekly Expense</label>
-                <select class='expenseDropDown'>
+                <label for='weeklyExpenseInput'>Weekly Expense</label>
+                <select id='expenseDropdown'>
                     <option value=''>Pick One</option>
                     <option value='4'>Bills</option>
                     <option value='3'>Food</option>
@@ -67,7 +67,7 @@
                     <option value='1'>Entertainment</option>
                     <option value='0'>Misc</option>
                 </select>
-                <input type='text' id='weeklyExpense' name='weeklyExpense' placeholder='Enter amount'>
+                <input type='number' id='weeklyExpenseInput' name='weeklyExpense' placeholder='Enter amount'>
                 <button>Add Expense</button>
             </form>
         </div>

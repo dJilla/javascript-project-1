@@ -9,6 +9,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     width: 100%;
     max-width: 7.5%;
     background-color: green;
@@ -24,37 +25,49 @@ div {
 #incomeForm {
     display: flex;
     flex-direction: column;
+    max-width: 30%;
 }
 
-#incomeForm input {
-    max-width: 25%;
-}
-
-#incomeForm button {
-    max-width: 25%;
-}
-
-#incomeForm label {
+#weeklyIncomeDisplay {
     font-weight: bold;
     font-size: 1.25em;
-    color: green;
 }
 
 #expenseForm {
     display: flex;
     flex-direction: column;
-    max-width: 25%;
+    max-width: 50%;
+
 }
 
 #expenseForm label {
     font-weight: bold;
     font-size: 1.25em;
+}
+
+#bigBoy {
+    margin-left: 10px;
+}
+
+.billsClass {
+    color: blue;
+}
+
+.foodClass {
     color: red;
 }
 
-/* #bigBoy {
-    margin-left: 10px;
-} */
+.clothingClass {
+    color: orange;
+}
+
+.entertainmentClass {
+    color: green;
+}
+
+.miscClass {
+    color: purple;
+}
 
 @media only screen and (min-width: 768px) {
     body {

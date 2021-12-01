@@ -7,6 +7,7 @@ let updateIncomeButton = document.querySelector('#updateIncomeButton');
 let expenseDropdown = document.querySelector('#expenseDropdown');
 let weeklyExpenseInput = document.querySelector('#weeklyExpenseInput');
 let addExpenseButton = document.querySelector('#addExpenseButton');
+let totalExpenseButton = document.querySelector('#totalExpenseButton');
 
 //variables
 let weeklyIncome = 0;
@@ -21,6 +22,9 @@ let entertainmentExpenseTotal = 0;
 let miscExpenses = [];
 let miscExpenseTotal = 0;
 let balance = 0;
+let totalExpensesArray = [];
+let totalExpenses = 0;
+let totalAmount = 0;
 
 //event listener on income button
 updateIncomeButton.addEventListener('click', event => {
@@ -42,6 +46,27 @@ addExpenseButton.addEventListener('click', event => {
         name: weeklyExpenseName.value,
         amount: weeklyExpenseInput.value
     };
+
+    //event listener button to total all categories and expenses
+totalExpenseButton.addEventListener('click', event => {
+    event.preventDefault();
+
+    totalExpensesArray.push(expense)
+    for(let cost of totalExpensesArray){
+        
+    totalExpenses = totalAmount + parseInt(cost.amount)
+
+    
+    
+    }
+    console.log(totalExpenses);
+
+
+
+    
+    
+    
+});
 
     //create new element for the expense to display
     let newExpense = document.createElement('p');

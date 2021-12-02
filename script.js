@@ -1,30 +1,5 @@
 (function() {
 
-    //pie chart
-    google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-    
-        function drawChart() {
-    
-        let data = google.visualization.arrayToDataTable([
-            ['Expense', '$'],
-            ['Bills',     20],
-            ['Food',      25],
-            ['Clothing',  5],
-            ['Entertainment', 10],
-            ['Misc.',    5]
-        ]);
-    
-        let options = {
-            title: 'Overall Spending',
-            is3D: true,
-        };
-    
-        let chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    
-        chart.draw(data, options);
-        }
-    
     //selectors
     let weeklyIncomeDisplay = document.querySelector('#weeklyIncomeDisplay');
     let weeklyIncomeInput = document.querySelector('#weeklyIncomeInput');
@@ -36,20 +11,14 @@
     
     //variables
     let weeklyIncome = 0;
-    let billsExpenses = [];
-    let billsExpenseTotal = 0;
-    let foodExpenses = [];
-    let foodExpenseTotal = 0;
-    let clothingExpenses = [];
-    let clothingExpenseTotal = 0;
-    let entertainmentExpenses = [];
-    let entertainmentExpenseTotal = 0;
-    let miscExpenses = [];
-    let miscExpenseTotal = 0;
+    let billsExpenses = 0;
+    let foodExpenses = 0;
+    let clothingExpenses = 0;
+    let entertainmentExpenses = 0;
+    let miscExpenses = 0;
     let balance = 0;
-    let totalExpensesArray = [];
     let totalExpenses = 0;
-    let totalAmount = 0;
+    
     
     
     
@@ -66,6 +35,7 @@
     
     //event listener on expense button
     addExpenseButton.addEventListener('click', event => {
+
         event.preventDefault();
     
         //add variable to store input value
@@ -111,8 +81,68 @@
         sumTotal();
         console.log(totalExpenses);
         
-        
+
+        let sumBills = () => {
+            if (newExpense.classList.contains('billsClass')) {
+                return billsExpenses += expenseAmount;
+            } 
         }
-        
-    );
+        sumBills();
+
+        let sumFood = () => {
+            if (newExpense.classList.contains('foodClass')) {
+                return foodExpenses += expenseAmount;
+            } 
+        }
+        sumFood();
+
+        let sumClothing = () => {
+            if (newExpense.classList.contains('clothingClass')) {
+                return clothingExpenses += expenseAmount;
+            } 
+        }
+        sumClothing();
+
+        let sumEntertainment = () => {
+            if (newExpense.classList.contains('entertainmentClass')) {
+                return entertainmentExpenses += expenseAmount;
+            } 
+        }
+        sumEntertainment();
+
+        let sumMisc = () => {
+            if (newExpense.classList.contains('miscClass')) {
+                return miscExpenses += expenseAmount;
+            } 
+        }
+        sumMisc();
+
+
+        //pie chart
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+        let data = google.visualization.arrayToDataTable([
+            ['Expense', '$'],
+            ['Bills',     billsExpenses],
+            ['Food',      foodExpenses],
+            ['Clothing',  clothingExpenses],
+            ['Entertainment', entertainmentExpenses],
+            ['Miscellaneous.',    miscExpenses]
+        ]);
+
+        let options = {
+            title: 'Overall Spending',
+            is3D: true,
+        };
+
+    let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+    }
+
+    });
+
     })();

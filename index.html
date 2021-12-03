@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='styles.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <title>Buddgy</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>
-            Your Budget
-        </h1>
+      <h1>Your Budget</h1>
     </header>
-    <section id='bigBoy'>
-        <div>
-            <h1 id='totalSummary' class='subHeader'>Total Summary</h1>
-            <div id="piechart" style="width: 675px; height: 375px;"></div>
-        </div>
-
-         <div id='incomeSection'>
-            <form id='incomeForm'>
-                <label id='weeklyIncomeDisplay' for='weeklyIncomeInput'>Weekly Income: $0</label>
-                <input type='number' id='weeklyIncomeInput' name='weeklyIncomeInput' placeholder='Enter amount'>
-                <button id='updateIncomeButton'>Update Income</button>
-            </form>
-        </div>
-
-        <div id='expenseSection'>
-            <form id='expenseForm'>
-                <label for='weeklyExpenseInput'>Weekly Expense</label>
-                <select id='expenseDropdown'>
-                    <option value=''>Pick One</option>
-                    <option value='4'>Bills</option>
-                    <option value='3'>Food</option>
-                    <option value='2'>Clothing</option>
-                    <option value='1'>Entertainment</option>
-                    <option value='0'>Miscellaneous</option>
-                </select>
-                <input type='number' id='weeklyExpenseInput' name='weeklyExpenseInput' placeholder='Enter amount'>
-                <input type='text' id='weeklyExpenseName' name='weeklyExpenseName' placeholder='Enter name'>
-                <button id='addExpenseButton'>Add Expense</button>
-            </form>  
-        </div>
+    <section id="bigBoy">
+      <div>
+        <h1 id="totalSummary" class="subHeader">Total Summary</h1>
+        <div id="piechart" style="width: 675px; height: 375px"></div>
+      </div>
+      <div id="incomeSection">
+        <form id="incomeForm">
+          <label id="weeklyIncomeDisplay" for="weeklyIncomeInput"
+            >Weekly Income: $0</label
+          >
+          <input
+            type="number"
+            id="weeklyIncomeInput"
+            name="weeklyIncomeInput"
+            placeholder="Enter amount"
+          />
+          <button id="updateIncomeButton">Update Income</button>
+        </form>
+      </div>
+      <div id="expenseSection">
+        <form id="expenseForm">
+          <label for="weeklyExpenseInput">Weekly Expense</label>
+          <select id="expenseDropdown">
+            <option value="">Pick One</option>
+            <option value="4">Bills</option>
+            <option value="3">Food</option>
+            <option value="2">Clothing</option>
+            <option value="1">Entertainment</option>
+            <option value="0">Miscellaneous</option>
+          </select>
+          <input
+            type="number"
+            id="weeklyExpenseInput"
+            name="weeklyExpenseInput"
+            placeholder="Enter amount"
+          />
+          <input
+            type="text"
+            id="weeklyExpenseName"
+            name="weeklyExpenseName"
+            placeholder="Enter name"
+          />
+          <button id="addExpenseButton">Add Expense</button>
+        </form>
+      </div>
     </section>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src='script.js'></script>   
-</body>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>

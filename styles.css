@@ -1,76 +1,136 @@
 body {
-    margin: auto;
-    height: 100vh;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;  
+  margin: auto;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
 }
-
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    max-width: 7.5%;
-    background-color: green;
-    top: 0;
-    padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 7.5%;
+  background-color: green;
+  top: 0;
+  padding-left: 15px;
 }
-
 div {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#main-container {
+  margin-left: 10px;
+  display: flex;
+  width: 100%;
+}
+#uiSection {
+  flex-basis: 40%;
+}
+#uiSection hover {
+  pointer-events: none;
+}
+#pieContainer {
+  flex-basis: 60%;
+}
+#incomeForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+#weeklyIncomeDisplay {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+#expenseForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+#expenseForm label {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+#bigBoy {
+  margin-left: 10px;
+}
+.billsClass {
+  color: blue;
+}
+.foodClass {
+  color: red;
+}
+.clothingClass {
+  color: orange;
+}
+.entertainmentClass {
+  color: green;
+}
+.miscClass {
+  color: purple;
+}
+#addExpenseButton{
+    max-width: 100%;;
+    border-radius: 100px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: #ADD8E6;
+    font-size: 15px;
+}
+#updateIncomeButton{
+    max-width: 100%;
+    border-radius: 100px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: #ADD8E6;
+    font-size: 15px;
+}
+#expenseDropdown{
+    border-radius: 100px;
+}
+#weeklyExpenseInput{
+    border-radius: 50px;
+    margin-top: 5px;
+    height: 20px;
+}
+#weeklyExpenseName{
+    border-radius: 50px;
+    margin-top: 3px;
+    height: 20px;
+}
+#weeklyIncomeInput{
+    border-radius: 100px;
 }
 
-#incomeForm {
+@media screen and (max-width: 768px) {
+  body {
+    margin: auto;
+    font-family: "Open Sans", sans-serif; 
     display: flex;
     flex-direction: column;
-    max-width: 30%;
-}
-
-#weeklyIncomeDisplay {
-    font-weight: bold;
-    font-size: 1.25em;
-}
-
-#expenseForm {
+  }
+  header {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+    max-width: 100%;
+    /*max-width: 7.5%;*/
+    background-color: green;
+    /*padding-left: 15px;*/
+  }
+  #main-container {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #expenseForm {
     display: flex;
     flex-direction: column;
     max-width: 50%;
-
-}
-
-#expenseForm label {
-    font-weight: bold;
-    font-size: 1.25em;
-}
-
-#bigBoy {
-    margin-left: 10px;
-}
-
-.billsClass {
-    color: blue;
-}
-
-.foodClass {
-    color: red;
-}
-
-.clothingClass {
-    color: orange;
-}
-
-.entertainmentClass {
-    color: green;
-}
-
-.miscClass {
-    color: purple;
-}
-
-@media only screen and (min-width: 768px) {
-    body {
-      
-    }
   }
+
+}
+
+

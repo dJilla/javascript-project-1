@@ -7,6 +7,7 @@
   let expenseDropdown = document.querySelector("#expenseDropdown");
   let weeklyExpenseInput = document.querySelector("#weeklyExpenseInput");
   let addExpenseButton = document.querySelector("#addExpenseButton");
+  let remainingBalance = document.querySelector("#remainingBalance");
   
   //variables
   let weeklyIncome = 0;
@@ -17,16 +18,31 @@
   let miscExpenses = 0;
   let balance = 0;
   let totalExpenses = 0;
+
+  //function that calculates the remaining balance
+  function calculateBalance() {
+    
+    balance = weeklyIncome - totalExpenses;
+    if (balance <= 0) {
+      alert("You are over budget!")
+    }
+  }
   
   //event listener on income button
   updateIncomeButton.addEventListener("click", (event) => {
     event.preventDefault();
     
     //declaring weeklyIncome to be equal to the value of the input
-    weeklyIncome = weeklyIncomeInput.value;
+    weeklyIncome = parseFloat(weeklyIncomeInput.value).toFixed(2);
+
+    //call function to calculate balance
+    calculateBalance();
     
     //displaying 'Weekly Income:' and then value of the income
     weeklyIncomeDisplay.innerText = `Weekly Income: $${weeklyIncome}`;
+
+    //display the balance correctly upon updating income
+    remainingBalance.innerText = `Balance: $${balance}`;
   });
   
   //event listener on expense button
@@ -35,7 +51,7 @@
     
     //add variable to store input value
     let expenseName = weeklyExpenseName.value;
-    let expenseAmount = parseInt(weeklyExpenseInput.value);
+    let expenseAmount = parseFloat(weeklyExpenseInput.value).toFixed(2);
     let expense = {
       name: expenseName,
       amount: expenseAmount,
@@ -66,12 +82,8 @@
       
       newExpense.classList.add("miscClass");
     }
-    
-    let sumTotal = () => {
-      totalExpenses += expenseAmount;
-    };
-    sumTotal();
 
+    //adding all bills together
     let sumBills = () => {
       
       if (newExpense.classList.contains("billsClass")) {
@@ -81,6 +93,7 @@
     };
     sumBills();
 
+    //adding all food together
     let sumFood = () => {
       
       if (newExpense.classList.contains("foodClass")) {
@@ -90,6 +103,7 @@
     };
     sumFood();
 
+    //adding all clothing together
     let sumClothing = () => {
       
       if (newExpense.classList.contains("clothingClass")) {
@@ -99,6 +113,7 @@
     };
     sumClothing();
 
+    //adding all entertainment together
     let sumEntertainment = () => {
       
       if (newExpense.classList.contains("entertainmentClass")) {
@@ -108,6 +123,7 @@
     };
     sumEntertainment();
 
+    //adding all misc together
     let sumMisc = () => {
       
       if (newExpense.classList.contains("miscClass")) {
@@ -116,6 +132,19 @@
       }
     };
     sumMisc();
+
+    //adding all expenses together
+    let sumTotal = () => {
+
+      totalExpenses += expenseAmount;
+    };
+    sumTotal();
+
+    //call function to calculate balance
+    calculateBalance();
+
+    //display new balance
+    remainingBalance.innerText = `Balance: $${balance}`;
 
     //pie chart
     google.charts.load("current", { packages: ["corechart"] });
@@ -129,7 +158,7 @@
         ["Food", foodExpenses],
         ["Clothing", clothingExpenses],
         ["Entertainment", entertainmentExpenses],
-        ["Miscellaneous.", miscExpenses],
+        ["Miscellaneous", miscExpenses],
       ]);
 
       let options = {

@@ -19,6 +19,29 @@
   let balance = 0;
   let totalExpenses = 0;
 
+  function drawChart() {
+      
+    let data = google.visualization.arrayToDataTable([
+      ["Expense", "$"],
+      ["Bills", billsExpenses],
+      ["Food", foodExpenses],
+      ["Clothing", clothingExpenses],
+      ["Entertainment", entertainmentExpenses],
+      ["Miscellaneous", miscExpenses],
+    ]);
+
+    let options = {
+      title: "Overall Spending",
+      is3D: true,
+    };
+
+    let chart = new google.visualization.PieChart(
+      document.getElementById("piechart")
+    );
+
+    chart.draw(data, options);
+  }
+
   //function that calculates the remaining balance
   function calculateBalance() {
     
@@ -33,16 +56,16 @@
     event.preventDefault();
     
     //declaring weeklyIncome to be equal to the value of the input
-    weeklyIncome = parseFloat(weeklyIncomeInput.value).toFixed(2);
+    weeklyIncome = weeklyIncomeInput.value;
 
     //call function to calculate balance
     calculateBalance();
     
     //displaying 'Weekly Income:' and then value of the income
-    weeklyIncomeDisplay.innerText = `Weekly Income: $${weeklyIncome}`;
+    weeklyIncomeDisplay.innerText = `Weekly Income: $${parseFloat(weeklyIncome).toFixed(2)}`;
 
     //display the balance correctly upon updating income
-    remainingBalance.innerText = `Balance: $${balance}`;
+    remainingBalance.innerText = `Balance: $${parseFloat(balance).toFixed(2)}`;
   });
   
   //event listener on expense button
@@ -52,7 +75,7 @@
     
     //add variable to store input value
     let expenseName = weeklyExpenseName.value;
-    let expenseAmount = parseFloat(weeklyExpenseInput.value).toFixed(2);
+    let expenseAmount = parseInt(weeklyExpenseInput.value);
     let expense = {
       name: expenseName,
       amount: expenseAmount,
@@ -137,7 +160,7 @@
     //adding all expenses together
     let sumTotal = () => {
 
-      totalExpenses += parseInt(expenseAmount);
+      totalExpenses += expenseAmount;
     };
     sumTotal();
 
@@ -145,34 +168,13 @@
     calculateBalance();
 
     //display new balance
-    remainingBalance.innerText = `Balance: $${balance}`;
+    remainingBalance.innerText = `Balance: $${parseFloat(balance).toFixed(2)}`;
 
     //pie chart
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      
-      let data = google.visualization.arrayToDataTable([
-        ["Expense", "$"],
-        ["Bills", billsExpenses],
-        ["Food", foodExpenses],
-        ["Clothing", clothingExpenses],
-        ["Entertainment", entertainmentExpenses],
-        ["Miscellaneous", miscExpenses],
-      ]);
-
-      let options = {
-        title: "Overall Spending",
-        is3D: true,
-      };
-
-      let chart = new google.visualization.PieChart(
-        document.getElementById("piechart")
-      );
-
-      chart.draw(data, options);
-    }
+   
 
   });
   

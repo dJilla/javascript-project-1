@@ -3,6 +3,7 @@ body {
   height: 100vh;
   font-family: "Open Sans", sans-serif;
   display: flex;
+  overflow-y: scroll;
 }
 
 header {

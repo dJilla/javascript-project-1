@@ -49,6 +49,7 @@
   addExpenseButton.addEventListener("click", (event) => {
     event.preventDefault();
     
+    
     //add variable to store input value
     let expenseName = weeklyExpenseName.value;
     let expenseAmount = parseFloat(weeklyExpenseInput.value).toFixed(2);
@@ -78,7 +79,7 @@
     } else if (selection === 1) {
       
       newExpense.classList.add("entertainmentClass");
-    } else if (selection === 0) {
+    } else {
       
       newExpense.classList.add("miscClass");
     }
@@ -136,7 +137,7 @@
     //adding all expenses together
     let sumTotal = () => {
 
-      totalExpenses += expenseAmount;
+      totalExpenses += parseInt(expenseAmount);
     };
     sumTotal();
 
@@ -171,7 +172,6 @@
       );
 
       chart.draw(data, options);
-
     }
 
   });

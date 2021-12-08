@@ -160,6 +160,13 @@ h1.subHeader {
     justify-content: center;
     margin-left: 80px;
   }
+  #balanceSection {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+  }
   #totalSummary {
     margin-left: 70px;
   }

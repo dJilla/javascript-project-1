@@ -75,7 +75,7 @@
     
     //add variable to store input value
     let expenseName = weeklyExpenseName.value;
-    let expenseAmount = parseInt(weeklyExpenseInput.value);
+    let expenseAmount = parseFloat(weeklyExpenseInput.value);
     let expense = {
       name: expenseName,
       amount: expenseAmount,
@@ -83,7 +83,7 @@
     
     //create new element for the expense to display
     let newExpense = document.createElement("p");
-    newExpense.innerText = `${expense.name}: $${expense.amount}`;
+    newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
     expenseSection.append(newExpense);
     
     //add variable to determine selection
